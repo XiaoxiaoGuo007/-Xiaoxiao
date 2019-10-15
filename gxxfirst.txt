@@ -1,1 +1,83 @@
 safsafsafasd
+
+
+    /**
+     * 处理发送返回报文失败的结果
+     * @param event
+     */
+    @EventListener(condition = "#event.fpsMsgNmId=='admi.002.001.01' and #event.refFpsMsgNmId=='fps.adrs.001.001.01'")
+    public void recFpsAddrAdmi002AboutAdrs001(FpsMsgReceiveEvent event) throws Exception{
+        Admi00200101ContextVO admi00200101ContextVO = event.getVO(Admi00200101ContextVO.class);
+        if(JudgeUtils.isNotNull(event.getRefReceiveEventList())){
+            Adrs00100101SchmeVO adrs00100101SchmeVO = event.getRefReceiveEvent().getVO(Adrs00100101SchmeVO.class);
+            String adrReqId = adrs00100101SchmeVO.getAdrReqId();
+            FptaddrHisDO fptaddrHisDO = new FptaddrHisDO();
+            fptaddrHisDO.setAdrReqId(adrReqId);
+            //根据adrReqId 查询历史表是否插入了该条记录
+            FptaddrHisDO result = fptaddrHisDao.getOneAddr(fptaddrHisDO);
+            if (JudgeUtils.isNull(result)){
+                KontException.throwBusinessException(MsgCdEnum.RECORD_NOT_EXIST);
+            }
+            result.setActionStatus(FpsConstants.ACTION_STATUS_FAIL);//这里接受失败解析的是失败的报文，所以将将其置为 "2"
+            int updateResult = fptaddrHisDao.update(result);
+            if (updateResult<=0){
+                KontException.throwBusinessException(MsgCdEnum.ADDR_UPDATE_FAIL);
+            }
+        }
+    }
+    @EventListener(condition = "#event.fpsMsgNmId=='admi.002.001.01' and #event.refFpsMsgNmId=='fps.adrs.002.001.01'")
+    public void recFpsAddrAdmi002AboutAdrs002(FpsMsgReceiveEvent event) throws Exception{
+        Admi00200101ContextVO admi00200101ContextVO = event.getVO(Admi00200101ContextVO.class);
+        if(JudgeUtils.isNotNull(event.getRefReceiveEventList())){
+            Adrs00200101UndrlygAmdmntDtlsVO adrs00200101UndrlygAmdmntDtlsVO = event.getRefReceiveEvent().getVO(Adrs00200101UndrlygAmdmntDtlsVO.class);
+            String adrReqId = adrs00200101UndrlygAmdmntDtlsVO.getAdrReqId();
+            FptaddrHisDO fptaddrHisDO = new FptaddrHisDO();
+            fptaddrHisDO.setAdrReqId(adrReqId);
+            //根据adrReqId 查询历史表是否插入了该条记录
+            FptaddrHisDO result = fptaddrHisDao.getOneAddr(fptaddrHisDO);
+            if (JudgeUtils.isNull(result)){
+                KontException.throwBusinessException(MsgCdEnum.RECORD_NOT_EXIST);
+            }
+            result.setActionStatus(FpsConstants.ACTION_STATUS_FAIL);//这里接受失败解析的是失败的报文，所以将将其置为 "2"
+            int updateResult = fptaddrHisDao.update(result);
+            if (updateResult<=0){
+                KontException.throwBusinessException(MsgCdEnum.ADDR_UPDATE_FAIL);
+            }
+        }
+    }
+    @EventListener(condition = "#event.fpsMsgNmId=='admi.002.001.01' and #event.refFpsMsgNmId=='fps.adrs.003.001.01'")
+    public void recFpsAddrAdmi002AboutAdrs003(FpsMsgReceiveEvent event) throws Exception{
+        Admi00200101ContextVO admi00200101ContextVO = event.getVO(Admi00200101ContextVO.class);
+        if(JudgeUtils.isNotNull(event.getRefReceiveEventList())){
+            Adrs00300101AdrSchmeVO adrs00300101AdrSchmeVO = event.getRefReceiveEvent().getVO(Adrs00300101AdrSchmeVO.class);
+            String adrReqId = adrs00300101AdrSchmeVO.getAdrReqId();
+            FptaddrHisDO fptaddrHisDO = new FptaddrHisDO();
+            fptaddrHisDO.setAdrReqId(adrReqId);
+            //根据adrReqId 查询历史表是否插入了该条记录
+            FptaddrHisDO result = fptaddrHisDao.getOneAddr(fptaddrHisDO);
+            if (JudgeUtils.isNull(result)){
+                KontException.throwBusinessException(MsgCdEnum.RECORD_NOT_EXIST);
+            }
+            result.setActionStatus(FpsConstants.ACTION_STATUS_FAIL);//这里接受失败解析的是失败的报文，所以将将其置为 "2"
+            int updateResult = fptaddrHisDao.update(result);
+            if (updateResult<=0){
+                KontException.throwBusinessException(MsgCdEnum.ADDR_UPDATE_FAIL);
+            }
+        }
+    }
+
+    @EventListener(condition = "#event.fpsMsgNmId=='admi.002.001.01' and #event.refFpsMsgNmId=='fps.adrs.006.001.01'")
+    public void recFpsAddrAdmi002AboutAdrs006(FpsMsgReceiveEvent event) throws Exception{
+        Admi00200101ContextVO admi00200101ContextVO = event.getVO(Admi00200101ContextVO.class);
+        if(JudgeUtils.isNotNull(event.getRefReceiveEventList())){
+            KontException.throwBusinessException(MsgCdEnum.SEND_OMST_ERR);
+        }
+    }
+
+    @EventListener(condition = "#event.fpsMsgNmId=='admi.002.001.01' and #event.refFpsMsgNmId=='fps.adrs.008.001.01'")
+    public void recFpsAddrAdmi002AboutAdrs008(FpsMsgReceiveEvent event) throws Exception{
+        Admi00200101ContextVO admi00200101ContextVO = event.getVO(Admi00200101ContextVO.class);
+        if(JudgeUtils.isNotNull(event.getRefReceiveEventList())){
+            KontException.throwBusinessException(MsgCdEnum.SEND_OMST_ERR);
+        }
+    }
