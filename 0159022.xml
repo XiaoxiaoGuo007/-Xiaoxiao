@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page name="0159022" enCaption="FPS ADDRESSING REGISTRATION">
+	<form name="form1" action="{uri:service.ibscore.ibscoreService}">
+			
+ <panel name="panel1">
+			<tableLayout cols="10,8,8,15,20,15"/>
+      <row name="row1">
+         <column name="column11">
+            <label name="label11" enCaption="CUSTOMER ID:"/>
+         </column>
+         <column name="column12"/>
+         <column name="column13">
+            <text name="CUS_ID"  value="{CUS_ID}" dictItem="X34" required= "true" width="7"/>
+         </column>
+         <column name="column14">
+         </column>
+         <column name="column15">
+            <label name="label13" enCaption="CUSTOMER TYPE:"/>
+         </column>
+         <column name="column16">
+            <select name="CUS_TYP"  value="{CUS_TYP}"  dictItem="C_TYP" optionItem="CUS_TYPE" required= "true"  width="12"/>
+         </column>
+      </row>
+      <!--<row name="row2">
+         <column name="column21" colspan="2">
+             <label name="labe21" enCaption="DISPLAYED CUSTOMER ID:"/>
+         </column>
+         <column name="column22" colspan="4">
+            <text name="DISCINO"  value="{DISCINO}" dictItem="X34"  width="9"/>
+         </column>
+      </row>--><!--modify display customer id DB 2019/10/15-->
+      <row name="row3">
+         <column name="column31" colspan="2">
+             <label name="label19" enCaption="LANGUAGE:"/>
+         </column>
+         <column name="column32" colspan="4">
+            <select name="LGE"  value="{LGE}" dictItem="LGE_TYP" optionItem="LANGE_TYPE" width="9"/>
+         </column>
+      </row>
+      <row name="row4">
+         <column name="column41" colspan="2">
+            <label name="label41" enCaption="CUSTOMER NAME(ENGLISH):"/>
+         </column>
+         <column name="column42" colspan="4">
+            <text name="CUS_NAME_EN"  value="{CUS_NAME_EN}"  dictItem="RMK_140" required= "true" width="45"/>
+         </column>
+      </row>
+      <row name="row5">
+        <column name="column51" colspan="2">
+          <label name="TEXT51" enCaption="DISPLAYED CUSTOMER NAME(ENGLISH):"/>
+        </column>
+        <column name="column52" colspan="4">
+          <text name="DIS_CUS_NAME_EN"  value="{DIS_CUS_NAME_EN}" dictItem="RMK_140"  type="text" width="45"/>
+        </column>
+      </row>
+      <row name="row6">
+         <column name="column61" colspan="2">
+             <label name="label61" enCaption="CUSTOMER NAME(CHINESE):"/>
+         </column>
+         <column name="column62" colspan="4">
+             <text name="CUS_NAME_CN"   value="{CUS_NAME_CN}" dictItem="NAME_CN" type="text" width="45"/>       
+         </column>
+      </row>
+      <row name="row7">
+        <column name="column71" colspan="2">
+          <label name="TEXT71" enCaption="DISPLAYED CUSTOMER NAME(CHINESE):"/>
+        </column>
+        <column name="column72" colspan="4">
+          <text name="DIS_CUS_NAME_CN" value="{DIS_CUS_NAME_CN}" dictItem="NAME_CN"  type="text" width="45"/>
+        </column>
+      </row>
+      <row name="row8">
+		     <column name="column81" colspan="2">
+            <label name="TEXT81" enCaption="PROXY IDENTIFICATION TYPE:"/>
+         </column>
+		     <column name="column82" colspan="2">
+            <select name="PRO_ID_TYPE"  value="{PRO_ID_TYPE}" dictItem="PRO_TYPE" optionItem="PROXY_TYPE" width="18"/>
+			<tip name="tipTYPE" type="errorTip"/>
+         </column>
+         <column name="column83">
+            <label name="TEXT83" enCaption="PROXY IDENTIFICATION:"/>
+         </column>
+         <column name="column84">
+            <text name="PRO_ID"   value="{PRO_ID}" dictItem="X34"  type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row9">
+         <column name="column91" colspan="2">
+            <label name="TEXT91" enCaption="CLEARING CODE:"/>
+         </column>
+		     <column name="column92" colspan="2">
+            <text name="CLEAR_CODE"  value="{CLEAR_CODE}" dictItem="X3" type="text" width="18"/>
+         </column>
+         <column name="column93">
+            <label name="TEXT93" enCaption="DEFAULT INDICATOR:"/>
+         </column>
+         <column name="column94">
+            <select name="DEF_IND" value="{DEF_IND}" dictItem="STS" optionItem="DEFAULT" width="18"/>
+         </column>
+      </row>
+
+      <row name="row10">
+         <column name="column101" colspan="2">
+            <label name="TEXT101" enCaption="CURRENCY:"/>
+         </column>
+		     <column name="column102" colspan="2">
+            <select name="PRO_CCY1" value="{PRO_CCY1}" dictItem="CCY" optionItem="PBCCY" width="18"/>
+         </column>
+         <column name="column103">
+            <label name="TEXT1031" enCaption="ACCOUNT:"/>
+         </column>
+         <column name="column104">
+            <text name="PRO_ACC1"  value="{PRO_ACC1}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+	  <!--
+      <row name="row11">
+         <column name="column111" colspan="2">
+            <label name="TEXT111" enCaption="CURRENCY:"/>
+         </column>
+		     <column name="column112" colspan="2">
+            <select name="PRO_CCY2" value="{PRO_CCY2}" dictItem="CCY" optionItem="PBCCY" width="18"/>
+         </column>
+         <column name="column113">
+            <label name="TEXT113" enCaption="ACCOUNT:"/>
+         </column>
+         <column name="column114" >
+            <text name="PRO_ACC2" value="{PRO_ACC2}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row12">
+         <column name="column121" colspan="2">
+            <label name="TEXT121" enCaption="CURRENCY:"/>
+         </column>
+		     <column name="column122" colspan="2">
+            <select name="PRO_CCY3" value="{PRO_CCY3}" dictItem="CCY" optionItem="PBCCY" width="18"/>
+         </column>
+         <column name="column123">
+            <label name="TEXT833" enCaption="ACCOUNT:"/>
+         </column>
+         <column name="column124">
+            <text name="PRO_ACC3" value="{PRO_ACC3}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row13">
+         <column name="column131" colspan="2">
+            <label name="TEXT131" enCaption="CURRENCY:"/>
+         </column>
+		     <column name="column132" colspan="2">
+            <select name="PRO_CCY4" value="{PRO_CCY4}" dictItem="CCY" optionItem="PBCCY" width="18"/>
+         </column>
+         <column name="column133">
+            <label name="TEXT133" enCaption="ACCOUNT:"/>
+         </column>
+         <column name="column134">
+            <text name="PRO_ACC4" value="{PRO_ACC4}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row14">
+         <column name="column141" colspan="2">
+            <label name="TEXT141" enCaption="NOTFICIATION PHONE NUMBER:"/>
+         </column>
+         <column name="column142" colspan="2">
+            <text name="NOT_PHONE" value="{NOT_PHONE}" dictItem="X34" type="text" width="18"/>
+         </column>
+         <column name="column143">
+            <label name="TEXT143" enCaption="ALTERNATIVE PHONE NUMBER:"/>
+         </column>
+         <column name="column144">
+            <text name="ALT_PHONE" value="{ALT_PHONE}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row15">
+      	 <column name="column151" colspan="2">
+            <label name="TEXT151" enCaption="NOTFICIATION E-MAIL:"/>
+         </column>
+         <column name="column152" colspan="2">
+            <text name="NOT_EMAIL" value="{NOT_EMAIL}" dictItem="X34" type="text" width="18"/>
+         </column>
+         <column name="column153">
+            <label name="TEXT153" enCaption="ALTERNATIVE E-MAIL:"/>
+         </column>
+         <column name="column154">
+            <text name="ALT_EMAIL" value="{ALT_EMAIL}" dictItem="X34" type="text" width="18"/>
+         </column>
+      </row>
+      <row name="row16">
+		     <column name="column161" colspan="2">
+            <label name="TEXT161" enCaption="NOTFICIATION COUNTRY CODE:"/>
+         </column>
+		     <column name="column162" colspan="2">
+            <text name="NOT_CNTY" value="{NOT_CNTY}" dictItem="X5" type="text" width="18"/>
+         </column>
+         <column name="column163">
+            <label name="TEXT163" enCaption="ALTERNATIVE COUNTRY CODE:"/>
+         </column>
+		     <column name="column164">
+            <text name="ALT_CNTY" value="{ALT_CNTY}" dictItem="X5" type="text" width="18"/>
+         </column>
+      </row>
+	  -->
+      <row name="row17">
+         <column name="column171" colspan="2">
+            <label name="TEXT171" enCaption="SUPPORTED OPTION CODE:"/>
+         </column>
+         <column name="column172" colspan="4">
+            <select name="SUP_CD" value="{SUP_CD}" dictItem="OP_CD" optionItem="SUP_CODE" required="false" width="18"/>
+         </column>
+      </row>
+      <row name="row18">
+		     <column name="column181" colspan="2">
+            <label name="TEXT181" enCaption="PURPOSE CODE:"/>
+         </column>
+		     <column name="column182" colspan="4">
+            <select name="PURP_CD" value="{PURP_CD}" dictItem="OP_CD" optionItem="PURP_CODE" width="18"/>
+         </column>
+      </row>
+      
+     
+ </panel>
+		<panel name="panel2">
+
+			<tableLayout cols="20,20,20,20"/>
+			<row name="row55">
+				<column name="column126">
+					<hidden name="txcode" value="0159022"/>
+					<hidden name="vtxcode" value="0159022"/>
+					<hidden name="pageTxCode" value="0159022"/>
+
+          <button name="button_submit" enCaption="SUBMIT" type="submit"/>
+				</column>
+				<text name="FUNC_CD" dictItem="OPT_TYPE" value="{FUNC_CD}"   display="false" type="text" width="4"/> <!--mod by devzmq for 针对不同的操作做不同的初始化 at 20190422 -->
+			</row>
+
+		</panel>
+
+
+	</form>
+	<script type="javascript">
+	   
+		<![CDATA[
+    $(document).ready(function(){
+
+				$.assign({"PRO_CCY1":"HKD",
+				          "PRO_CCY2":"CNY",
+				          "PRO_CCY3":"USD",
+				          "PRO_CCY4":"EUR",
+				          "LGE"			:"EN"
+								});
+				$.setRequired("CUS_ID","PRO_ID_TYPE","CLEAR_CODE","PURP_CD");//"PRO_ID"
+				$.readonly("CUS_TYP","CUS_NAME_EN","CUS_NAME_CN","PRO_CCY1","PRO_CCY2","PRO_CCY3","PRO_CCY4","DISCINO","LGE");
+   				 
+				 //--start mod by devzmq for FPS Addressing-Maintain创建页面栏位显示 at 20190418
+				  $.getWidget("CUS_ID").change(function(){
+			       GET_CUSTOMER_INFO();
+			    });
+			     
+			     function GET_CUSTOMER_INFO()
+			     {
+			       if($.value("CUS_ID")!="") 
+			       {
+			         $.nest({
+			         url   : "{uri:service.ibscore.ibscoreService}",
+			         data  : {
+			           txcode   : "0159029",
+			           CUS_ID   : $.value("CUS_ID"),
+			           FUNC_CD	:"ADD" //mod by devzmq for Addressing 创建页面修改 at 20190422
+			         },
+			         callback : function(nestData){
+			         	 $.assign({"CUS_ID": nestData.CUS_ID});
+			         	 $.assign({"CUS_TYP": nestData.CUS_TYP}); 
+			           $.assign({"CUS_NAME_EN": nestData.NAME_INFO_EN});
+			           $.assign({"CUS_NAME_CN": nestData.NAME_INFO_CN});
+			         
+			       
+			           CUS_TYP_CHECK();
+					   
+			         }
+			        });
+			       }
+			       else
+			       {
+			       	 $.clear("CUS_ID");
+			       	 $.clear("CUS_TYP");
+			         $.clear("CUS_NAME_EN");
+			         $.clear("CUS_NAME_CN");
+			         $.clear("DIS_CUS_NAME_EN");
+			         $.clear("DIS_CUS_NAME_CN");
+			       }
+			    }
+			    
+			    function CUS_TYP_CHECK()
+			    {
+				 var CUST_TYPE = $.value("CUS_TYP");
+			       if(CUST_TYPE == "CORP")
+			       {
+			         $.setRequired("SUP_CD");
+			       }
+			       if(CUST_TYPE == "PERS")
+			       { 
+			         $.optional("SUP_CD");
+			       }
+			    }
+				 //--end mod by devzmq for FPS Addressing-Maintain创建页面栏位显示 at 20190418 
+				//--start mod by devzmq for FPS Addressing-Maintain创建页面栏位显示 at 20190626
+				$.getWidget("PRO_ID_TYPE").change(function(){
+			       PRO_ID_TYPE_CHECK();
+			    });
+				function PRO_ID_TYPE_CHECK()
+			    { 
+				   var PRO_ID_TYPE=$.value("PRO_ID_TYPE");
+			       if(PRO_ID_TYPE=="EMAL")
+			       { 
+					 $.setRequired("PRO_ID");
+			       }
+				   if(PRO_ID_TYPE=="MOBN")
+			       { 
+					 $.setRequired("PRO_ID");
+			       }
+				   if(PRO_ID_TYPE =="SVID")
+			       { 
+			         $.optional("PRO_ID");
+			       }
+			    }
+			
+				//手机号验证判断
+				$.getWidget("PRO_ID").change(function(){
+					var PRO_ID_TYPE=$.value("PRO_ID_TYPE");
+					var PRO_ID=$.value("PRO_ID");
+					if(PRO_ID_TYPE=="MOBN")
+			        {
+						isPoneAvailable($PRO_ID);
+			        }
+			    });
+				function isPoneAvailable($PRO_ID) { //判断手机号是否为11位
+					var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+					if (!myreg.test($PRO_ID.val())) {
+						return false;
+					} else {
+						return true;
+					}
+				}
+				
+			//--end mod by devzmq for FPS Addressing-Maintain创建页面栏位显示 at 20190626	
+      });
+]]>
+	</script>
+</page>
